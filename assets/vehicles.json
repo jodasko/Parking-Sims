@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"plate": "M - X 997",
+		"type": "car",
+		"level": 1,
+		"slot": 23
+	},
+	{
+		"id": 2,
+		"plate": "Y - X 523",
+		"type": "motorbike",
+		"level": 3,
+		"slot": 11
+	},
+	{
+		"id": 3,
+		"plate": "AA - K 1",
+		"type": "motorbike",
+		"level": 2,
+		"slot": 25
+	},
+	{
+		"id": 4,
+		"plate": "N - DD 829",
+		"type": "motorbike",
+		"slot": 2,
+		"level": 4
+	},
+	{
+		"id": 5,
+		"plate": "B - B 1",
+		"type": "car",
+		"level": 2,
+		"slot": 24
+	},
+	{
+		"id": 6,
+		"plate": "Ch - R 1113",
+		"type": "motorbike",
+		"level": 2,
+		"slot": 2
+	},
+	{
+		"id": 7,
+		"plate": "M - Y 1177",
+		"type": "car",
+		"level": 3,
+		"slot": 14
+	},
+	{
+		"id": 8,
+		"plate": "HH - I 12222",
+		"type": "car",
+		"level": 1,
+		"slot": 8
+	},
+	{
+		"id": 9,
+		"plate": "LA - X 523",
+		"type": "motorbike",
+		"level": 2,
+		"slot": 19
+	},
+	{
+		"id": 10,
+		"plate": "C - K 2323",
+		"type": "motorbike",
+		"level": 1,
+		"slot": 24
+	}
+]

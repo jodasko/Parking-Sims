@@ -1,0 +1,417 @@
+/*====================================*/
+/*===Developed by: Carlos Salazar ====*/
+/*===Test: City of Vence ===========*/
+/*===To: ysura.recruiterbox ========*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body{
+	overflow: auto;
+    -webkit-overflow-x: hidden;
+    -moz-overflow-x: hidden;
+	overflow-x: hidden;
+	height: 100%;
+	font-size: 1.0em;
+	font-family: Helvetica, sans-serif;
+}
+
+/*Button*/
+button {
+    background-color: #008cba;
+    border: medium none;
+    color: white;
+    display: block;
+    font-size: 1hv;
+    margin: 19px auto 0;
+    max-width: 100%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    cursor: pointer;
+}
+button:hover{
+	background-color: #4CAF50;
+}
+
+.showAll-btn{
+    width: 60px;
+    height: 24px;
+    float: right;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.upperCase-txt{
+    text-transform: uppercase;
+}
+.capitalize-txt{
+    text-transform: capitalize;
+}
+.greater-txt{
+    font-size: 1.2em;
+}
+
+.activated-btn{background-color: #4CAF50;}
+
+.pagination{
+    width: 95%;
+    margin: 0 auto;
+}
+.paging-btn{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.paging-btn:hover{
+    background-color: transparent;
+}
+.wrapperForms, .wrapperTable{
+	background: #fff none repeat scroll 0 0;
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    margin: 0 auto;
+    padding: 0;
+    width: 92%;
+}
+ .inner-wrap{
+    padding: 10px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+ h1{
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+ h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+ label{
+    display: block;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+    margin-bottom: 15px;
+}
+ input[type="text"],
+ input[type="date"],
+ input[type="datetime"],
+ input[type="email"],
+ input[type="number"],
+ input[type="search"],
+ input[type="time"],
+ input[type="url"],
+ input[type="password"],
+ textarea,
+ select {
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.parking-input{
+    display: inline-block !important;
+    width: 50% !important;
+}
+.section{
+    font: normal 20px Helvetica, serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+.section span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -40px;
+    color: #fff;
+    margin-top: -3px;
+}
+input[type="button"],
+input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+.privacy-policy{
+    float: right;
+    width: 250px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #4D4D4D;
+    margin-top: 10px;
+    text-align: right;
+}
+
+label.setting{
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+}
+button.setting-btn{
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+button.setting-btn {
+    width: 45%;
+    height: 45px;
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    padding: 0;
+    margin: 5px 0 0;
+}
+.input-txt{
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.input-search-txt{
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.error-txt{
+    color: red;
+    display: block;
+    font-size: 0.8em;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+}
+
+/**********Table***********/
+/**Garage Table**/
+.wrapper{
+	width: 95%;
+	margin: 0 auto;
+}
+aside.filter{
+	width: 30%;
+}
+section.garage-table{
+	background-color: #fff;
+	width: 60%;
+	
+}
+aside.filters,
+section.garage-table{
+	display: inline;
+    margin: 15px auto;
+    vertical-align: top;
+    width: 90%;
+}
+
+/*filters section*/
+h5{text-transform: uppercase;}
+
+.type{margin-top: 0;}
+
+input[type=search] { 	
+	padding: 0 0 0 21px;            
+	font-family: Helvetica, sans-serif;     
+	border: 0;  
+	background: #fff1e7;          
+	line-height: 2;
+	float:right;
+	margin-bottom: 15px;
+}
+.loupe{
+	float: right;
+	margin: 3px -20px 0 0;
+	cursor: pointer;
+	color: #a55b26;
+}
+.loupe:after{
+	font-family: FontAwesome;
+	font-size: 14px;
+	content: "\f002";
+}
+
+.levels,.type{
+	color: #a55b26;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: top;
+	width: 45%;
+}
+
+/*vehicles info section*/
+/*---pagination---*/
+.pages,.sep,.vehiclesNum,.titlePag{
+	vertical-align: top;
+    display: inline-block;
+}
+.sep{
+	font-size: 37px;
+    padding: 0;
+}
+.vehiclesNum{
+	font-size: 35px;
+	color: #C3C3C3;
+}
+
+.garage-table table{width: 100%;}
+
+table.vehicle-info{
+	border-top: 6px solid #fff;
+    background-color: #ededed;
+}
+table.vehicle-info tr td:first-child{
+	text-align: left;
+	padding-left: 40px;
+	padding-top: 5px;
+}
+table.vehicle-info tr td:last-child{
+	text-align: right;
+	padding-right: 40px;
+}
+
+.pagination{
+	float: right;
+}
+
+.fa-car{
+    margin-right:5px; 
+}
+.leavingParking{
+    color: red;
+}
+.leavingParking:hover{
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+h5{margin-bottom: -8px;}
+
+/**********EndTable***********/
+
+/****media queries****/
+@media (min-width:768px){
+    .container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .wrapperForms,.wapperTable{ 
+        width: 20%;
+        padding: 30px;
+        margin: 0px auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .wrapperTable {
+        margin-left: 40px;
+        padding: 0;
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .form-style-10 .inner-wrap {
+        padding: 30px;
+    }
+    .form-style-10 .section{
+        margin-left: 0;
+    }
+    .form-style-10 .section span {
+    margin-left: -45px;
+    }
+    button{
+        cursor: pointer;
+    }
+    aside.filters,
+    section.garage-table{
+        display: inline-block;
+        vertical-align: top;
+        margin: 15px 10px;
+        width: 27%;
+    }
+    section.garage-table {
+        width: 62%;
+        margin-left: 10px;
+    }
+    .levels,.type{
+        vertical-align: initial;
+        display: inline;
+    }
+    .type{margin-top: 40px;}
+
+    .pagination{float: left;}
+
+    label.setting{
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    button.setting-btn{
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    button.setting-btn {
+        width: 45%;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
+        padding: 5px;
+    }
+}
+
+@media (min-width:768px){
+    .wrapperForms, .wapperTable {
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+    }
+}

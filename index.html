@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="appGarage">
+<head>
+	<title>City of Vence Garage| Ysura </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script> -->
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/app.js"></script>
+</head>
+<body data-ng-controller="GarageCtrl">
+<div class="container">
+<div class="wrapperForms">
+
+<!--***task #1***-->
+<h1>City of Vence <br/>Public Parking <span>Simulator Test</span></h1>
+
+    <div class="section"><span>1</span>Set number of Levels and Slots</div>
+    <span class="error-txt">{{alertMsg}}</span>
+    <div class="inner-wrap">
+        <label class="setting">Levels<input type="number" min="1" data-ng-model="addNewValue.levels"/></label>
+        <label class="setting">Places <input type="number" min="1" data-ng-model="addNewValue.slots" /></label>
+        <button class="setting-btn" ng-show="!buildParking" data-ng-click="settingParking(); buildParkingToggle()">Build the parking</button>
+        <button class="setting-btn activated-btn" ng-show="buildParking" data-ng-click="settingParking(); buildParkingToggle()">Built !</button>
+    </div>
+
+    <div class="section"><span>2</span>Parking Access Control</div>
+    <div class="inner-wrap">
+        <label>License Number <input class="input-txt parking-input" type="text" data-ng-model="newVehicle.plateNumber"/></label>
+        <span class="error-txt">{{dupePlate}}</span>
+        <label>Type of Vehicle
+        	<select class="parking-input" ng-model="newVehicle.typeVehicle">
+						<option value="car">Car</option>
+						<option value="motorbike">Motorbike</option>
+					</select>
+				</label>
+		<span class="error-txt">{{noPlaces}}</span>
+		<button class="greater-txt" data-ng-click="addNewVehicle()">Go in !</button>
+    </div>
+</div> 
+
+<!--task #2 -->
+<div class="wrapperTable">
+	
+	<div class="section">
+		<span>3</span>
+		<div class="title_txt">Vehicles in Parking</div>
+	</div>
+
+	<section class="wrapper" >
+	<!-- filters -->
+		<aside class="filters">
+
+			<!-- search -->
+			<input class="input-search-txt" placeholder="Vehicle's License Number" type="search" name="search" data-ng-model="search">
+			<div class="loupe"></div>
+
+			<section class="levels">
+				<h5>Levels</h5>
+				<ul>
+					<li data-ng-click="garageFilter={level:1}">Level 1</li>
+					<li data-ng-click="garageFilter={level:2}">Level 2</li>
+					<li data-ng-click="garageFilter={level:3}">Level 3</li>
+					<li data-ng-click="garageFilter={level:4}">Level 4</li>
+					<span data-ng-repeat="lvl in levelNum">
+						<li ng-click="myGarageFilter(lvl.num)">Level {{lvl.num}}</li>
+					</span>
+				</ul>
+			</section>
+			<section class="type">
+				<h5>Type</h5>
+				<ul>
+					<li data-ng-click="garageFilter={type:'car'}">Car</li>
+					<li data-ng-click="garageFilter={type:'motorbike'}">Motorbike</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- vehicles info -->
+		<section class="garage-table">
+			<button class="showAll-btn" ng-click="search=null; garageFilter=null">show all</button>
+
+			<!-- paging -->
+			<div class="pagination">
+				<section class="pages">
+					<div>{{currentPage+1}}</div>
+					<span>{{numberOfPages()}}</span>
+				</section>
+				<div class="sep">/</div>
+				<div class="vehiclesNum">{{vehicles.length}}</div>
+				<span class="titlePag">Vehicles</span>
+				<button class="paging-btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+  	 		 <img ng-src="assets/img/up-btn.png" alt="up-btn">
+			</button>
+				 <button class="paging-btn" ng-disabled="currentPage >= vehicles.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+ 			 <img ng-src="assets/img/down-btn.png" alt="">
+				 </button>
+			</div>
+			<!-- end of paging -->
+			<table  class="vehicle-info" data-ng-repeat="vehicle in vehicles | orderBy:'id':true| filter:searchText | filter:search | filter: garageFilter | startFrom:currentPage*pageSize | limitTo:pageSize">
+				<tr>
+					<td class="upperCase-txt">{{vehicle.plate}}</td>
+					<td >Level {{vehicle.level}}</td>
+				</tr>
+				<tr>
+					<td class="capitalize-txt">{{vehicle.type}}</td>
+					<td>Slot {{vehicle.slot}}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><a class="leavingParking" ng-click="deleteVehicle(vehicle)"><i class="fa fa-car"></i><span>Exit</span></a></td>
+				</tr>
+			</table>
+		</section>
+	</section>
+</div>
+</div>
+</body>
+</html>
